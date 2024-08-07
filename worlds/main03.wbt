@@ -1,0 +1,255 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/Floor.proto"
+
+WorldInfo {
+  gravity 0
+  basicTimeStep 10
+}
+Viewpoint {
+  orientation -0.011357405659161551 0.011620760510448488 0.9998679749156146 1.5997061442730665
+  position 0.40880852657951305 -14.198259242233217 2.380997304730393
+}
+Floor {
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Robot {
+  children [
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        minStop -0.7
+        maxStop 0.7
+      }
+      device [
+        RotationalMotor {
+          name "joint_1"
+          acceleration 10
+          controlPID 100 0.1 1
+          minPosition -0.6
+          maxPosition 0.6
+          maxTorque 10000
+        }
+        PositionSensor {
+          name "joint_1_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation 5.3622578026575e-16 0 -6.334985803367643e-17
+        rotation 0 1 0 3.1415930002243204
+        children [
+          Pose {
+            translation 0 0 -0.5
+            children [
+              Shape {
+                appearance DEF black PBRAppearance {
+                  baseColor 0.5 0.5 0.5
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 1
+                  radius 0.01
+                }
+              }
+            ]
+          }
+          Pose {
+            translation 0 0 -1
+            children [
+              Shape {
+                appearance DEF myred PBRAppearance {
+                  baseColor 0.5 0.5 0.5
+                  roughness 1
+                  metalness 0
+                }
+                geometry Sphere {
+                  radius 0.1
+                }
+              }
+            ]
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0 1 0
+              anchor 0 0 -1
+              minStop -0.7
+              maxStop 0.7
+            }
+            device [
+              RotationalMotor {
+                name "joint_2"
+                acceleration 10
+                controlPID 100 0.1 1
+                minPosition -0.6
+                maxPosition 0.6
+                maxTorque 10000
+              }
+              PositionSensor {
+                name "joint_2_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation -8.093185107561225e-16 0 -1.0000000000000004
+              rotation 0 1 0 0
+              children [
+                Pose {
+                  translation 0 0 -0.5
+                  children [
+                    Shape {
+                      appearance USE black
+                      geometry Cylinder {
+                        height 1
+                        radius 0.01
+                      }
+                    }
+                  ]
+                }
+                Pose {
+                  translation 0 0 -1
+                  children [
+                    Shape {
+                      appearance USE myred
+                      geometry Sphere {
+                        radius 0.1
+                      }
+                    }
+                  ]
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    axis 0 1 0
+                    anchor 0 0 -1
+                    minStop -0.7
+                    maxStop 0.7
+                  }
+                  device [
+                    RotationalMotor {
+                      name "joint_3"
+                      acceleration 10
+                      controlPID 100 0.1 1
+                      minPosition -0.6
+                      maxPosition 0.6
+                      maxTorque 10000
+                    }
+                    PositionSensor {
+                      name "joint_3_sensor"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation -9.35636538801502e-17 0 -1.0000000000000004
+                    rotation 0 1 0 0
+                    children [
+                      Pose {
+                        translation 0 0 -0.5
+                        children [
+                          Shape {
+                            appearance USE black
+                            geometry Cylinder {
+                              height 1
+                              radius 0.01
+                            }
+                          }
+                        ]
+                      }
+                      Pose {
+                        translation 0 0 -1
+                        children [
+                          Shape {
+                            appearance USE myred
+                            geometry Sphere {
+                              radius 0.1
+                            }
+                          }
+                        ]
+                      }
+                      HingeJoint {
+                        jointParameters HingeJointParameters {
+                          axis 0 1 0
+                          anchor 0 0 -1
+                          minStop -0.7
+                          maxStop 0.7
+                        }
+                        device [
+                          RotationalMotor {
+                            name "joint_4"
+                            acceleration 10
+                            controlPID 100 0.1 1
+                            minPosition -0.6
+                            maxPosition 0.6
+                            maxTorque 10000
+                          }
+                          PositionSensor {
+                            name "joint_4_sensor"
+                          }
+                        ]
+                        endPoint Solid {
+                          translation -1.7394669749833124e-16 0 -1.0000000000000007
+                          rotation 0 1 0 0
+                          children [
+                            Pose {
+                              translation 0 0 -0.5
+                              children [
+                                Shape {
+                                  appearance USE black
+                                  geometry Cylinder {
+                                    height 1
+                                    radius 0.01
+                                  }
+                                }
+                              ]
+                            }
+                            Pose {
+                              translation 0 0 -1
+                              children [
+                                Shape {
+                                  appearance USE myred
+                                  geometry Sphere {
+                                    radius 0.1
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                          name "link_4"
+                          physics Physics {
+                            density -1
+                            mass 1
+                          }
+                        }
+                      }
+                    ]
+                    name "link_3"
+                    physics Physics {
+                      density -1
+                      mass 1
+                    }
+                  }
+                }
+              ]
+              name "link_2"
+              physics Physics {
+                density -1
+                mass 1
+              }
+            }
+          }
+        ]
+        name "link_1"
+        physics Physics {
+          density -1
+          mass 1
+        }
+        rotationStep 0.1
+      }
+    }
+  ]
+  name "FourRobot"
+  rotationStep 0.1
+  controller "my_controller_new_cons"
+}

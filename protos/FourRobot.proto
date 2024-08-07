@@ -1,0 +1,251 @@
+#VRML_SIM R2023b utf8
+# license: Apache License 2.0
+# license url: http://www.apache.org/licenses/LICENSE-2.0
+# This is a proto file for Webots for the FourRobot
+# Extracted from: /home/bytedance/learn_ws/plumbing_wbc_ws/src/triple_robot/urdf/four_pendulum.urdf
+
+PROTO FourRobot [
+  field  SFVec3f     translation     0 0 0
+  field  SFRotation  rotation        0 0 1 0
+  field  SFString    name            "FourRobot"  # Is `Robot.name`.
+  field  SFString    controller      "void"       # Is `Robot.controller`.
+  field  MFString    controllerArgs  []           # Is `Robot.controllerArgs`.
+  field  SFString    customData      ""           # Is `Robot.customData`.
+  field  SFBool      supervisor      FALSE        # Is `Robot.supervisor`.
+  field  SFBool      synchronization TRUE         # Is `Robot.synchronization`.
+  field  SFBool      selfCollision   FALSE        # Is `Robot.selfCollision`.
+]
+{
+  Robot {
+    translation IS translation
+    rotation IS rotation
+    controller IS controller
+    controllerArgs IS controllerArgs
+    customData IS customData
+    supervisor IS supervisor
+    synchronization IS synchronization
+    selfCollision IS selfCollision
+    children [
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 0.000000 1.000000 0.000000
+        }
+        device [
+          RotationalMotor {
+            name "joint_1"
+            maxTorque 10000
+          }
+          PositionSensor {
+            name "joint_1_sensor"
+          }
+        ]
+        endPoint Solid {
+          rotation 0.000000 1.000000 0.000000 3.141593
+          children [
+            Pose {
+              translation 0.000000 0.000000 -0.500000
+              children [
+                Shape {
+                  appearance DEF black PBRAppearance {
+                    baseColor 0.500000 0.500000 0.500000
+                    roughness 1.000000
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    radius 0.01
+                    height 1.0
+                  }
+                }
+              ]
+            }
+            Pose {
+              translation 0.000000 0.000000 -1.000000
+              children [
+                Shape {
+                  appearance DEF myred PBRAppearance {
+                    baseColor 0.500000 0.500000 0.500000
+                    roughness 1.000000
+                    metalness 0
+                  }
+                  geometry Sphere {
+                    radius 0.1
+                  }
+                }
+              ]
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0.000000 1.000000 0.000000
+                anchor 0.000000 0.000000 -1.000000
+              }
+              device [
+                RotationalMotor {
+                  name "joint_2"
+                  maxTorque 10000
+                }
+                PositionSensor {
+                  name "joint_2_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation 0.000000 0.000000 -1.000000
+                children [
+                  Pose {
+                    translation 0.000000 0.000000 -0.500000
+                    children [
+                      Shape {
+                        appearance USE black
+                        geometry Cylinder {
+                          radius 0.01
+                          height 1.0
+                        }
+                      }
+                    ]
+                  }
+                  Pose {
+                    translation 0.000000 0.000000 -1.000000
+                    children [
+                      Shape {
+                        appearance USE myred
+                        geometry Sphere {
+                          radius 0.1
+                        }
+                      }
+                    ]
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.000000 1.000000 0.000000
+                      anchor 0.000000 0.000000 -1.000000
+                    }
+                    device [
+                      RotationalMotor {
+                        name "joint_3"
+                        maxTorque 10000
+                      }
+                      PositionSensor {
+                        name "joint_3_sensor"
+                      }
+                    ]
+                    endPoint Solid {
+                      translation 0.000000 0.000000 -1.000000
+                      children [
+                        Pose {
+                          translation 0.000000 0.000000 -0.500000
+                          children [
+                            Shape {
+                              appearance USE black
+                              geometry Cylinder {
+                                radius 0.01
+                                height 1.0
+                              }
+                            }
+                          ]
+                        }
+                        Pose {
+                          translation 0.000000 0.000000 -1.000000
+                          children [
+                            Shape {
+                              appearance USE myred
+                              geometry Sphere {
+                                radius 0.1
+                              }
+                            }
+                          ]
+                        }
+                        HingeJoint {
+                          jointParameters HingeJointParameters {
+                            axis 0.000000 1.000000 0.000000
+                            anchor 0.000000 0.000000 -1.000000
+                          }
+                          device [
+                            RotationalMotor {
+                              name "joint_4"
+                              maxTorque 10000
+                            }
+                            PositionSensor {
+                              name "joint_4_sensor"
+                            }
+                          ]
+                          endPoint Solid {
+                            translation 0.000000 0.000000 -1.000000
+                            children [
+                              Pose {
+                                translation 0.000000 0.000000 -0.500000
+                                children [
+                                  Shape {
+                                    appearance USE black
+                                    geometry Cylinder {
+                                      radius 0.01
+                                      height 1.0
+                                    }
+                                  }
+                                ]
+                              }
+                              Pose {
+                                translation 0.000000 0.000000 -1.000000
+                                children [
+                                  Shape {
+                                    appearance USE myred
+                                    geometry Sphere {
+                                      radius 0.1
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                            name "link_4"
+                            boundingObject Cylinder {
+                              radius 0.015
+                              height 1.0
+                            }
+                            physics Physics {
+                              density -1
+                              mass 1.000000
+                            }
+                          }
+                        }
+                      ]
+                      name "link_3"
+                      boundingObject Cylinder {
+                        radius 0.015
+                        height 1.0
+                      }
+                      physics Physics {
+                        density -1
+                        mass 1.000000
+                      }
+                    }
+                  }
+                ]
+                name "link_2"
+                boundingObject Cylinder {
+                  radius 0.015
+                  height 1.0
+                }
+                physics Physics {
+                  density -1
+                  mass 1.000000
+                }
+              }
+            }
+          ]
+          name "link_1"
+          boundingObject Cylinder {
+            radius 0.015
+            height 1.0
+          }
+          physics Physics {
+            density -1
+            mass 1.000000
+          }
+        }
+      }
+    ]
+    name IS name
+    physics Physics {
+      density -1
+      mass 0.010000
+    }
+  }
+}
